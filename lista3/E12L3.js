@@ -1,26 +1,30 @@
-/*
-para esse programa será necessário:
-* criar laço while do, enquanto n1 > n2 > n3
-* criar 3 variaveis que representem 3 números digitados pelo usuário (n1, n2 e n3)
-* criar variavel soma, (n1+n2+n3)
-* criar variavel produto, (n1*n2*n3)
-* criar variavel media, (soma/3)
-* criar condição: se n1 > n2 >3
-mostrar a soma, produto e media dos números
-*/
+//ler a quantidade de conjuntos que serão inseridos -> var conj
+//ler os 3 valores inseridos -> var n1, n2 e n3
+//se estiverem em ordem crescente, o programa rodará! caso não, não rodará
+//calcular a soma de cada conjunto -> var soma
+//calcular o produto dos numeros de cada conjunto -> var produto
+//calcular a media de cada conjunto -> var media
+//mostrar os resultados
 
-do {
-    let leia = require("readline-sync")
-    console.log("Digite o primeiro número: ")
-    n1 = leia.questionFloat()
-    console.log("Digite o segundo número número: ")
-    n2 = leia.questionFloat()
-    console.log("Digite o terceiro número número: ")
-    n3 = leia.questionFloat()
-    soma = n1+n2+n3
-    prod = n1*n2*n3
-    medi = (soma / 3)
+let readline = require ("readline-sync")
+console.log("\n***INSIRA OS VALORES EM ORDEM CRESCENTE***")
+var conj = readline.question("\nInsira a quantidade de conjuntos: ")
+
+for(i=1; i<=conj; i++){
+    var n1 = parseFloat(readline.question("Digite o primeiro numero: "))
+    var n2 = parseFloat(readline.question("Digite o segundo numero: "))
+    var n3 = parseFloat(readline.question("Digite o terceiro numero: "))
+
     if(n1 < n2 && n2 < n3){
-        console.log(`A soma dos números é ${soma}, o produto dos números é ${prod} e a média é ${medi.toFixed(2)}`)
+        do {
+            var soma = n1+n2+n3
+            var produto = n1*n2*n3
+            var media = (soma/3)
+        } 
+        while (n1 > n2 > n3)
+        console.log(`A soma dos números é ${soma}, o produto dos números é ${produto} e a média é ${media.toFixed(2)}.\n`)
     }
-} while (n1 > n2 > n3)
+    else{
+        console.log("\nPARA O PROGRAMA RODAR PERFEITAMENTE É NECESSARIO QUE OS NUMEROS INSERIDOS ESTEJAM EM ORDEM CRESCENTE\n")
+    }
+}
