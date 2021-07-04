@@ -14,4 +14,4 @@ for(i = n; i >= 1; i--){
     calc = calc * i
     console.log(n+" x "+i)
 }
-console.log("A resposta é: "+cal2)
+console.log("A resposta é: "+calc)
